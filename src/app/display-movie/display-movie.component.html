@@ -1,0 +1,28 @@
+<ng-container *ngIf="movie">
+  <div class="container-fluid mt-5">
+    <div class="row">
+      <div class="card col-12 col-sm-4 col-md-6 m-auto d-flex flex-row p-0">
+        <div class="img">
+          <img
+            class="w-100 h-100"
+            [src]="movie.Poster"
+            [alt]="'image of' + movie.Title"
+          />
+        </div>
+        <div class="content">
+          <p>Title: {{ movie.Title }}</p>
+          <p>Genre: {{ movie.Genre }}</p>
+          <p>Released:{{ movie.Year }}</p>
+          <p>Actors: {{ movie.Actors }}</p>
+          <button
+            class="btn btn-primary mt-2 w-50"
+            (click)="sendMovie()"
+            routerLink="movie-rating"
+          >
+            movie description
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</ng-container>

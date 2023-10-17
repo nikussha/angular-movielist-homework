@@ -1,0 +1,41 @@
+<ng-container *ngIf="sharedMovie$ | async as sharedmovie">
+  <div class="container-fluid">
+    <div class="row">
+      <div
+        class="card col-8 col-sm-8 col-md-6 p-0 m-4 bg-dark text-white d-flex flex-row"
+      >
+        <div class="card-image" style="width: 40%">
+          <img class="h-100 w-100" [src]="sharedmovie.Poster" alt="" />
+        </div>
+        <div class="card-body">
+          <p>Title: {{ sharedmovie.Title }}</p>
+          <p>Genre: {{ sharedmovie.Genre }}</p>
+          <p>Released:{{ sharedmovie.Year }}</p>
+          <p>Director: {{ sharedmovie.Director }}</p>
+          <p>Actors: {{ sharedmovie.Actors }}</p>
+          <p>Director: {{ sharedmovie.imdbRating }}</p>
+          <p>Awards: {{ sharedmovie.Awards }}</p>
+          <p>Director: {{ sharedmovie.Country }}</p>
+          <div class="flags">
+            <img
+              *ngFor="let flag of sharedmovie.flags"
+              [src]="flag.png"
+              alt=""
+            />
+          </div>
+          <form class="d-flex justify-content-between align-items-center">
+            <textarea
+              [formControl]="addcomment"
+              id="textarea"
+              class="textarea w-75"
+              placeholder="add description..."
+            ></textarea>
+            <button (click)="addtofavorites()" class="btn btn-primary w-100">
+              Add to favorites
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</ng-container>

@@ -1,0 +1,63 @@
+{
+  "favorites": [
+    {
+      "Actors": "Junko Takeuchi, Maile Flanagan, Kate Higgins",
+      "Awards": "N/A",
+      "Director": "kishimoto",
+      "Genre": "Animation, Action, Adventure",
+      "imdbRating": "8.4",
+      "Poster": "https://m.media-amazon.com/images/M/MV5BZmQ5NGFiNWEtMmMyMC00MDdiLTg4YjktOGY5Yzc2MDUxMTE1XkEyXkFqcGdeQXVyNTA4NzY1MzY@._V1_SX300.jpg",
+      "Year": 27,
+      "Country": "Japan",
+      "Title": "Naruto",
+      "flags": [
+        {
+          "png": "https://flagcdn.com/w320/jp.png",
+          "svg": "https://flagcdn.com/jp.svg",
+          "alt": "The flag of Japan features a crimson-red circle at the center of a white field."
+        }
+      ],
+      "id": 974,
+      "comment": "Uchiha madara forever"
+    },
+    {
+      "Actors": "Daniel Day-Lewis, Paul Dano, Ciarán Hinds",
+      "Awards": "Won 2 Oscars. 114 wins & 138 nominations total",
+      "Director": "Paul Thomas Anderson",
+      "Genre": "Drama",
+      "imdbRating": "8.2",
+      "Poster": "https://m.media-amazon.com/images/M/MV5BMjAxODQ4MDU5NV5BMl5BanBnXkFtZTcwMDU4MjU1MQ@@._V1_SX300.jpg",
+      "Year": "2007",
+      "Country": "United States",
+      "Title": "There Will Be Blood",
+      "flags": [
+        {
+          "png": "https://flagcdn.com/w320/um.png",
+          "svg": "https://flagcdn.com/um.svg"
+        }
+      ],
+      "id": 841,
+      "comment": "Daniel day Lewis top performance "
+    },
+    {
+      "Actors": "Takashi Shimura, Nobuo Kaneko, Shin'ichi Himori",
+      "Awards": "Nominated for 1 BAFTA Award6 wins & 2 nominations total",
+      "Director": "Akira Kurosawa",
+      "Genre": "Drama",
+      "imdbRating": "8.3",
+      "Poster": "https://m.media-amazon.com/images/M/MV5BYWM1YmZkNTctZDAwNy00ZTY4LWFjMTktYzU4ZjViMmU1OTJmXkEyXkFqcGdeQXVyMTA0MTM5NjI2._V1_SX300.jpg",
+      "Year": "1952",
+      "Country": "Japan",
+      "Title": "Ikiru",
+      "flags": [
+        {
+          "png": "https://flagcdn.com/w320/jp.png",
+          "svg": "https://flagcdn.com/jp.svg",
+          "alt": "The flag of Japan features a crimson-red circle at the center of a white field."
+        }
+      ],
+      "id": 748,
+      "comment": "Masterpiece"
+    }
+  ]
+}

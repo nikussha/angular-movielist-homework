@@ -1,0 +1,27 @@
+.container-fluid{
+    .row{
+        display: flex;
+        
+        .card{
+            height: 500px;
+            &-content{
+                margin-bottom: 10px;
+                p{
+                    font-size: 18px;
+                    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+                    letter-spacing: 2px;
+                }
+            }
+
+            .card-img{
+                img{
+                    border-radius: 5px;
+                }
+            }
+            
+
+         
+
+        }
+    }
+}

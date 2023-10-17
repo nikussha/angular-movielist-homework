@@ -1,0 +1,9 @@
+<section class="search-movie mt-4">
+  <input
+    class="form-control w-25 m-auto text-primary"
+    type="text"
+    placeholder="Search movie"
+    [formControl]="searchmovie"
+  />
+</section>
+<app-display-movie [movie]="responseData$ | async"></app-display-movie>

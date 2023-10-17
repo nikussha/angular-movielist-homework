@@ -1,0 +1,36 @@
+.container-fluid{
+    .row{
+        .card{
+            height: 500px;
+            &-img{
+                img{
+                    border-radius: 10px;
+                }
+            }
+           
+    }
+    .flags{
+        img{
+            width: 20%;
+            height: 20px;
+            margin: 10px;
+        }
+    }
+    p{
+        font-size: 18px;
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    }
+    form{
+        textarea {
+                margin: 10px;
+                border-radius: 5px;
+                font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+                padding: 5px;
+            }
+            label{
+                font-size: 16px;
+                font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            }
+    }
+    
+    }}

@@ -1,0 +1,37 @@
+<ng-container *ngIf="currentMovie$ | async as currentmovie">
+  <div class="container-fluid">
+    <div class="row">
+      <ng-container *ngIf="!isEditMode; else editmode">
+        <div
+          class="card col-10 col-sm-8 col-md-5 m-4 d-flex flex-row p-2 bg-dark text-white"
+        >
+          <div class="card-img">
+            <img class="h-100" [src]="currentmovie.Poster" alt="" />
+          </div>
+          <div class="card-content mt-3">
+            <p class="">Title: {{ currentmovie.Title }}</p>
+            <p class="">Genre: {{ currentmovie.Genre }}</p>
+            <p class="">Actors: {{ currentmovie.Actors }}</p>
+            <p class="">Director: {{ currentmovie.Director }}</p>
+            <p *ngIf="currentmovie.comment" class="">
+              Description: {{ currentmovie.comment }}
+            </p>
+            <button (click)="openedit()" class="btn btn-primary mt-3">
+              Edit movie
+            </button>
+          </div>
+        </div>
+      </ng-container>
+    </div>
+  </div>
+
+  <ng-template #editmode>
+    <ng-container>
+      <app-editmovie
+        (cancelevent)="closeedit()"
+        (updateevent)="editmovie($event)"
+        [updatedmovie]="currentmovie"
+      ></app-editmovie>
+    </ng-container>
+  </ng-template>
+</ng-container>

@@ -1,0 +1,43 @@
+<ng-container *ngIf="favoriteMovies$ | async as moviesArray">
+  <ng-container *ngIf="moviesArray.length; else nofavoritemovie">
+    <div class="container-fluid p-3">
+      <div class="row">
+        <p class="fs-3 text-white text-center">Favorite Movies</p>
+
+        <div
+          class="card col-10 col-sm-5 col-md-3 p-0 m-3"
+          *ngFor="let movie of moviesArray"
+        >
+          <img
+            class="card-img-top h-50"
+            [src]="movie.Poster"
+            [alt]="'image of ' + movie.Title"
+          />
+          <div class="card-body">
+            <p class="card-title fs-4">{{ movie.Title }}</p>
+            <p class="genre">Genre: {{ movie.Genre }}</p>
+            <p>
+              <span class="imdb-rating">imdb</span> -
+              {{ movie.imdbRating }}
+            </p>
+            <div class="buttons d-flex justify-content-around mt-4">
+              <button (click)="deleteMovie(movie)" class="btn btn-danger">
+                delete
+              </button>
+              <button
+                [routerLink]="movie.id.toString()"
+                class="btn btn-primary"
+              >
+                details
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </ng-container>
+</ng-container>
+
+<ng-template #nofavoritemovie>
+  <p class="fs-2 text-white text-center mt-5">No favorite movie</p>
+</ng-template>

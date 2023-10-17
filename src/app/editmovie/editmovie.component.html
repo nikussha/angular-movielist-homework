@@ -1,0 +1,70 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-10 col-sm-6">
+      <form
+        class="d-flex flex-column w-100 align-items-center justify-content-center p-4"
+        [formGroup]="formgroup"
+      >
+        <div
+          class="wrapper w-100 d-flex align-items-center justify-content-around"
+        >
+          <label for="title">Title:</label>
+          <input
+            formControlName="Title"
+            class="form-control mt-3 w-75"
+            id="title"
+          />
+        </div>
+        <div
+          class="wrapper w-100 d-flex align-items-center justify-content-around"
+        >
+          <label for="genre">Genre:</label>
+          <input
+            formControlName="Genre"
+            class="form-control mt-3 w-75"
+            id="genre"
+          />
+        </div>
+        <div
+          class="wrapper w-100 d-flex align-items-center justify-content-around"
+        >
+          <label for="director">Director:</label>
+          <input
+            formControlName="Director"
+            class="form-control mt-3 w-75"
+            id="director"
+          />
+        </div>
+        <div
+          class="wrapper w-100 d-flex align-items-center justify-content-around"
+        >
+          <label for="year">Year:</label>
+          <input
+            type="number"
+            formControlName="Year"
+            class="form-control mt-3 w-75"
+            id="year"
+          />
+        </div>
+        <div
+          class="wrapper w-100 d-flex align-items-center justify-content-around"
+        >
+          <label for="comment">Comment:</label>
+          <textarea
+            formControlName="comment"
+            class="form-control mt-3 w-75"
+            id="comment"
+          ></textarea>
+        </div>
+        <div class="buttons m-auto mt-3">
+          <button class="btn btn-primary m-2" (click)="updatemovie()">
+            edit
+          </button>
+          <button class="btn btn-danger m-2" (click)="canceledit()">
+            cancel
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
