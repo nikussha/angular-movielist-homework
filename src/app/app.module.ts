@@ -14,6 +14,8 @@ import { DisplayMovieComponent } from './display-movie/display-movie.component';
 import { FavoritesComponent } from './favorites/favorites.component';
 import { MoviedetailsComponent } from './moviedetails/moviedetails.component';
 import { EditmovieComponent } from './editmovie/editmovie.component';
+import { AddMovieComponent } from './add-movie/add-movie.component';
+import { MovielistComponent } from './movielist/movielist.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +26,8 @@ import { EditmovieComponent } from './editmovie/editmovie.component';
     FavoritesComponent,
     MoviedetailsComponent,
     EditmovieComponent,
+    AddMovieComponent,
+    MovielistComponent,
   ],
   imports: [
     CommonModule,

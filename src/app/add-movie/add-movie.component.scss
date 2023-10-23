@@ -1,0 +1,93 @@
+.container{
+    background-color: rgb(58, 64, 71);;
+    border-radius: 10px;
+    min-height: 600px;
+    padding: 15px;
+    .col{
+        height: 500px;
+        
+
+    }
+
+    label{
+        cursor: pointer;
+        margin-right: 5px;
+    }
+
+    input[type=text],input[type=number], input[type=date],select {
+  
+            margin: 5px;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    }
+
+
+    input[type=checkbox],input[type=radio]{
+      transform: scale(1.3);
+      cursor: pointer;
+   
+    }
+ 
+    select{
+        cursor: pointer;
+        padding: 2px;
+    }
+
+             
+    option{
+        
+        font-size: 15px;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    }
+    
+
+ 
+    
+        .ng-submitted{
+            input{
+
+            &.ng-invalid{
+                border: 2px solid red;
+            }
+        }
+        }
+       
+          
+    }
+
+        
+   
+
+
+        
+
+
+
+
+
+.star-rating {
+    font-size: 20px;
+    cursor: pointer;
+    margin-right: 5px;
+    color:transparent;
+    text-shadow:  0 0 0 rgb(203, 202, 202);
+    background-color: none;
+   
+}
+
+.star-rating.gold {
+    color: gold;
+}
+
+
+
+  .add-form-field-button {
+      width: 50px;
+      height: 30px;
+      font-size: 30px;
+      color: white;
+
+  &:hover {
+    background-color: rgb(52, 54, 74);
+    
+  }
+  }

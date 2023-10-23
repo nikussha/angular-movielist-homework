@@ -1,3 +1,5 @@
+import { FormControl } from '@angular/forms';
+
 export interface ResponseData extends Movie {
   flags: any;
   id: number;
@@ -32,3 +34,21 @@ export interface favoriteMovie extends ResponseData {
 }
 
 export type updateMovie = Partial<favoriteMovie>;
+
+export interface AddedMovie {
+  name: string;
+  countries: string[];
+  eventplace?: string;
+  genre: string[];
+  movieorshow: string;
+  tvshowseries?: number;
+  movielength?: string;
+  rating: string;
+  id: number;
+  releasedate?: string;
+}
+
+export interface CountryType {
+  name: string;
+  population: number;
+}

@@ -1,0 +1,36 @@
+<ng-container *ngIf="myMovies | async as movies">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col col-4" *ngFor="let movie of movies">
+        <div class="card mt-2 text-white p-3">
+          <div class="card-body">
+            <p>Name: {{ movie.name }}</p>
+            <div class="genre d-flex">
+              <p>Genre:</p>
+              <p *ngFor="let g of movie.genre">{{ g }}</p>
+            </div>
+            <div class="genres d-flex flex-row">
+              <p>Country :</p>
+              <p *ngFor="let country of movie.countries">
+                {{ country }}
+              </p>
+            </div>
+            <p>Rating - {{ movie.rating }}</p>
+            <p *ngIf="movie.movielength">
+              Movie length
+              {{ movie.movielength }}
+              {{
+                movie.movielength.includes("minute") ||
+                movie.movielength.includes("minutes")
+                  ? ""
+                  : "minutes"
+              }}
+            </p>
+            <p *ngIf="movie.tvshowseries">{{ movie.tvshowseries }} series</p>
+            <p>Announced: {{ movie.releasedate }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</ng-container>

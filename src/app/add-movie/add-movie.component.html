@@ -1,0 +1,219 @@
+<div class="container">
+  <div class="row">
+    <div class="col h-100">
+      <form
+        [class.ng-submitted]="submittedform"
+        class="d-flex flex-column align-items-center p-2"
+        [formGroup]="group"
+        (ngSubmit)="submitForm()"
+      >
+        <input
+          class="w-50 p-2 input"
+          formControlName="name"
+          type="text"
+          name=""
+          id=""
+          placeholder="Movie name.."
+        />
+        <ng-container
+          *ngIf="
+            group.get('name')?.dirty && group.get('name')?.errors as errors
+          "
+        >
+          <p class="text-danger" *ngIf="errors['required']">Name is required</p>
+          <p class="text-danger" *ngIf="errors['minlength']">
+            Minimum length is 3
+          </p>
+          <p class="text-danger" *ngIf="errors['maxlength']">
+            Maximum length is 3
+          </p>
+          <p class="text-danger" *ngIf="errors['movieexists']">
+            Movie already exists
+          </p>
+        </ng-container>
+
+        <div formArrayName="countries" class="form-array-wrapper w-50 d-flex">
+          <div class="select-wrapper d-flex flex-column">
+            <select
+              class="w-50 input"
+              *ngFor="let country of Countries.controls; let i = index"
+              [formControlName]="i"
+            >
+              <ng-container *ngIf="countriesarr">
+                <option [value]="null" hidden>select country</option>
+                <option
+                  *ngFor="let option of countriesarr"
+                  [value]="option.name"
+                >
+                  {{ option.name }}
+                </option>
+              </ng-container>
+            </select>
+            <button
+              type="button"
+              class="add-form-field-button btn d-flex align-items-center justify-content-center"
+              (click)="addformfield()"
+            >
+              +
+            </button>
+          </div>
+        </div>
+
+        <ng-container
+          *ngIf="
+            group.get('countries')?.touched &&
+            group.get('countries')?.errors as countrieserror
+          "
+        >
+          <p class="text-danger">Please select country</p>
+        </ng-container>
+
+        <input
+          class="w-50 p-1"
+          formControlName="eventplace"
+          type="text"
+          placeholder="add event place..."
+        />
+        <ng-container
+          *ngIf="
+            group.get('eventplace')?.dirty &&
+            group.get('eventplace')?.errors as eventerror
+          "
+        >
+          <p class="text-danger" *ngIf="eventerror['required']">
+            Event is required
+          </p>
+        </ng-container>
+
+        <input
+          class="w-50 p-1"
+          formControlName="releasedate"
+          type="date"
+          [min]="today"
+        />
+        <ng-container
+          *ngIf="
+            group.get('releasedate')?.touched &&
+            group.get('releasedate')?.errors as dateerror
+          "
+        >
+          <p *ngIf="dateerror['required']">Date is required</p>
+        </ng-container>
+
+        <div class="w-50 checkbox-wrapper d-flex flex-column">
+          <div
+            class="d-flex align-items-center p-1"
+            *ngFor="let item of genres"
+          >
+            <input
+              class="m-2"
+              type="checkbox"
+              [name]="item"
+              [id]="item"
+              [value]="item"
+              (change)="controlchange($event, item)"
+              #checkboxes
+            />
+            <label class="text-white fs-5" [for]="item">{{ item }}</label>
+          </div>
+        </div>
+
+        <ng-container
+          *ngIf="submittedform && group.get('genre')?.errors as error"
+        >
+          <p class="text-danger">Please select at least 1 genre</p>
+        </ng-container>
+
+        <div class="radio-wrapper d-flex p-3 w-50">
+          <div
+            class="movie text-white d-flex justify-content-end align-items-center m-1 w-100"
+          >
+            <label class="fs-5" for="movie">Movie </label>
+            <input
+              formControlName="movieorshow"
+              type="radio"
+              id="movie"
+              value="movie"
+            />
+          </div>
+          <div
+            class="show text-white d-flex m-1 justify-content-start align-items-center w-100"
+          >
+            <label class="fs-5" for="show">TV Show </label>
+            <input
+              formControlName="movieorshow"
+              type="radio"
+              id="show"
+              value="show"
+            />
+          </div>
+        </div>
+
+        <ng-container *ngIf="submittedform && group.get('movieorshow')?.errors">
+          <p class="text-danger">Please select type</p>
+        </ng-container>
+
+        <ng-container *ngIf="group.controls['movieorshow'].value === 'movie'">
+          <input
+            formControlName="movielength"
+            class="w-50 p-1"
+            type="text"
+            placeholder="Add movie length"
+          />
+        </ng-container>
+        <ng-container *ngIf="group.controls['movieorshow'].value === 'show'">
+          <input
+            class="w-50 p-1"
+            type="number"
+            min="1"
+            placeholder="Add show series"
+            formControlName="tvshowseries"
+          />
+        </ng-container>
+
+        <ng-container
+          *ngIf="
+            group.get('movielength')?.dirty &&
+            group.get('movielength')?.errors as movieerror
+          "
+        >
+          <p class="text-danger" *ngIf="movieerror['required']">
+            please add movie length
+          </p>
+        </ng-container>
+        <ng-container
+          *ngIf="
+            group.get('tvshowseries')?.dirty &&
+            group.get('tvshowseries')?.errors as tvshowerror
+          "
+        >
+          <p class="text-danger" *ngIf="tvshowerror['required']">
+            please add tvshow series
+          </p>
+        </ng-container>
+
+        <div class="rating">
+          <button
+            type="button"
+            class="btn star-rating"
+            [ngClass]="{
+              gold: i === selectedstar
+            }"
+            *ngFor="let i of [1, 2, 3, 4, 5]"
+            (click)="togglestar(i)"
+          >
+            ⭐
+          </button>
+        </div>
+        <ng-container
+          *ngIf="submittedform && group.get('rating')?.errors as ratingerror"
+        >
+          <p class="text-danger" *ngIf="ratingerror['required']">
+            Rating is required
+          </p>
+        </ng-container>
+        <button class="btn btn-primary mt-2">Add Movie</button>
+      </form>
+    </div>
+  </div>
+</div>
